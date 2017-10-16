@@ -19,11 +19,9 @@ class CreateTurmasTable extends Migration
             $table->date('data_limite');
             $table->integer('oficina_id')->unsigned();
             $table->foreign('oficina_id')->references('id')->on('oficinas');
-            $table->integer('aluno_id')->unsigned();
-            $table->foreign('aluno_id')->references('id')->on('alunos');
-            $table->integer('horario_id')->unsigned();
+            $table->string('horario_id')->unsigned();
             $table->foreign('horario_id')->references('id')->on('horarios');
-            $table->integer('dia_id')->unsigned();
+            $table->string('dia_id')->unsigned();
             $table->foreign('dia_id')->references('id')->on('dias');
             $table->timestamps();
         });

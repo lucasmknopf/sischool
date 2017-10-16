@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">DevMedia</a>
+            <a class="navbar-brand" href="/">SISCHOOL</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -70,20 +70,19 @@
                            aria-controls="colListGroup1"
                            aria-expanded="false"
                            data-toggle="collapse">
-                            <span class="fa fa-file fa-2x"></span>
-                            Gerenciar Posts</a>
+                            <span class="fa fa-graduation-cap fa-2x"></span>
+                            Gerenciar Alunos</a>
                     </h4>
                 </div>
                 <div role="tabpanel" class="panel-collapse
                          collapse" id="colListGroup1"
                      aria-expanded="false">
-                    <ul class="list-group">
+                    <ul class="list-group barra_lateral">
                         <li class="list-group-item">
-                            <a href="#">Criar novo Posts</a></li>
+                            <a href="{{ route('aluno.create') }}">Cadastrar Alunos</a></li>
                         <li class="list-group-item">
-                            <a href="#">Alterar Posts</a></li>
-                        <li class="list-group-item">
-                            <a href="#">Excluir Posts</a></li>
+                            <a href="{{ route('aluno') }}">Listar Alunos</a></li>
+
                     </ul>
                     <div class="panel-footer">
 
@@ -94,7 +93,7 @@
 
             <!--inicio menu navegação lateral-->
 
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div id="colGroup1" role="tab" class="panel-heading">
                     <h4 class="panel-title">
                         <a href="#colListGroup2"
@@ -108,13 +107,83 @@
                 <div role="tabpanel" class="panel-collapse
                          collapse" id="colListGroup2"
                      aria-expanded="false">
-                    <ul class="list-group">
+                    <ul class="list-group barra_lateral">
                         <li class="list-group-item">
-                            <a href="#">Criar novo Usuario</a></li>
+                            <a href="{{ route('professor.create') }}">Cadastrar Professor</a></li>
                         <li class="list-group-item">
-                            <a href="#">Alterar Usuario</a></li>
+                            <a href="{{ route('auxiliar.create') }}">Cadastrar Auxiliar</a></li>
                         <li class="list-group-item">
-                            <a href="#">Excluir Usuario</a></li>
+                            <a href="{{ route('coordenador.create') }}">Cadastrar Coordenador</a></li>
+                        <li class="list-group-item">
+                            <a href="{{ route('professor') }}">Listar Professores</a></li>
+                        <li class="list-group-item">
+                            <a href="{{ route('auxiliar') }}">Listar Auxiliar</a></li>
+                        <li class="list-group-item">
+                            <a href="{{ route('coordenador') }}">Listar Coordenador</a></li>
+                    </ul>
+                    <div class="panel-footer">
+
+                    </div>
+                </div>
+            </div>
+            <!--/.menu navegação lateral-->
+
+            <!--inicio menu navegação lateral-->
+
+            <div class="panel panel-primary">
+                <div id="colGroup1" role="tab" class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#colListGroup3"
+                           aria-controls="colListGroup3"
+                           aria-expanded="false"
+                           data-toggle="collapse">
+                            <span class="fa fa-book fa-2x"></span>
+                            Gerenciar Turmas</a>
+                    </h4>
+                </div>
+                <div role="tabpanel" class="panel-collapse
+                         collapse" id="colListGroup3"
+                     aria-expanded="false">
+                    <ul class="list-group barra_lateral">
+                        <li class="list-group-item">
+                            <a href="{{ route('turma.create') }}">Cadastrar Turma</a></li>
+                        <li class="list-group-item">
+                            <a href="{{ route('turma') }}">Listar Turmas</a></li>
+
+                    </ul>
+                    <div class="panel-footer">
+
+                    </div>
+                </div>
+            </div>
+            <!--/.menu navegação lateral-->
+
+            <!--inicio menu navegação lateral-->
+
+            <div class="panel panel-primary">
+                <div id="colGroup1" role="tab" class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#colListGroup4"
+                           aria-controls="colListGroup4"
+                           aria-expanded="false"
+                           data-toggle="collapse">
+                            <span class="fa fa-clock-o fa-2x"></span>
+                            Gerenciar Dias e Horarios</a>
+                    </h4>
+                </div>
+                <div role="tabpanel" class="panel-collapse
+                         collapse" id="colListGroup4"
+                     aria-expanded="false">
+                    <ul class="list-group barra_lateral">
+                        <li class="list-group-item">
+                            <a href="{{ route('dia.create') }}">Cadastrar Dias</a></li>
+                        <li class="list-group-item">
+                            <a href="{{ route('dia') }}">Listar Dias</a></li>
+                        <li class="list-group-item">
+                            <a href="{{ route('horario.create') }}">Cadastrar Horarios</a></li>
+                        <li class="list-group-item">
+                            <a href="{{ route('horario') }}">Listar Horarios</a></li>
+
                     </ul>
                     <div class="panel-footer">
 

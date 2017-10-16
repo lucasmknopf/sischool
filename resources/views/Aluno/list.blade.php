@@ -20,6 +20,7 @@
                     <th>DT. Nascimento</th>
                     <th>Turno</th>
                     <th>Oficina Desejada</th>
+                    <th>Ação</th>
                 </tr>
 
             </thead>
@@ -33,7 +34,11 @@
                     <td>{{$alu->certidao_nasc}}</td>
                     <td>{{$alu->data_nasc}}</td>
                     <td>{{$alu->turno}}</td>
-                    <td>{{$alu->oficina_id}}</td>
+                    <td>{{$alu->oficina->nome_oficina}}</td>
+                    <td>
+                        <a href="{{route('aluno.edit',['id'=>$alu->id])}}" class=" btn-xs btn-success">Editar</a>
+                        <a href="{{route('aluno.destroy',['id'=>$alu->id])}}" class=" btn-xs btn-danger">Excluir</a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

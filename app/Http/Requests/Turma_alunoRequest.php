@@ -13,7 +13,7 @@ class Turma_alunoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**

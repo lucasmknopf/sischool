@@ -5,7 +5,15 @@
         <div class="col-sm-9">
         <h1>Novo Aluno</h1>
 
-        {!! Form::open(['url'=>'aluno/store']) !!}
+            @if($errors->any())
+                <ul class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            @endif
+
+        {!! Form::open(['route'=>'aluno.store']) !!}
 
         <div class="form-group">
             {!! Form::label('nome', 'Nome') !!}
@@ -40,11 +48,11 @@
 
             <div class="form-group">
                 {!! Form::label('oficina_id', 'Oficina Desejada') !!}
-                {!! Form::text('oficina_id', null,['class' =>'form-control']) !!}
+                {!! Form::select('oficina_id', \App\Oficina::orderBy('nome_oficina')->pluck('nome_oficina','id')->toArray(), null,['class' =>'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::submit ('cadastrar aluno', ['class'=>'btn btn-primary btn-lg' ]) !!}
+                {!! Form::submit ('Cadastrar Aluno', ['class'=>'btn btn-primary btn-lg' ]) !!}
 
             </div>
 
