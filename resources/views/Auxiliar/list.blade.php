@@ -33,7 +33,7 @@
                     <td>{{$aux->cpf}}</td>
                     <td>{{$aux->telefone}}</td>
                     <td>{{$aux->endereco}}</td>
-                    <td>{{$aux->data_nasc}}</td>
+                    <td>{{ date( 'd/m/Y' , strtotime($aux->data_nasc))}}</td>
                     <td>{{$aux->email}}</td>
 
                     <td>

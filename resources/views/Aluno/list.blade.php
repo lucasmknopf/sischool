@@ -32,7 +32,7 @@
                     <td>{{$alu->telefone}}</td>
                     <td>{{$alu->endereco}}</td>
                     <td>{{$alu->certidao_nasc}}</td>
-                    <td>{{$alu->data_nasc}}</td>
+                    <td>{{ date( 'd/m/Y' , strtotime($alu->data_nasc))}}</td>
                     <td>{{$alu->turno}}</td>
                     <td>{{$alu->oficina->nome_oficina}}</td>
                     <td>

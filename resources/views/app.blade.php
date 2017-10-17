@@ -70,7 +70,7 @@
                            aria-controls="colListGroup1"
                            aria-expanded="false"
                            data-toggle="collapse">
-                            <span class="fa fa-graduation-cap fa-2x"></span>
+                            <span class="fa fa-graduation-cap fa-2x"> </span>
                             Gerenciar Alunos</a>
                     </h4>
                 </div>
@@ -100,7 +100,7 @@
                            aria-controls="colListGroup2"
                            aria-expanded="false"
                            data-toggle="collapse">
-                            <span class="fa fa-users fa-2x"></span>
+                            <span class="fa fa-users fa-2x"> </span>
                             Gerenciar Usuarios</a>
                     </h4>
                 </div>
@@ -137,7 +137,7 @@
                            aria-controls="colListGroup3"
                            aria-expanded="false"
                            data-toggle="collapse">
-                            <span class="fa fa-book fa-2x"></span>
+                            <span class="fa fa-book fa-2x"> </span>
                             Gerenciar Turmas</a>
                     </h4>
                 </div>
@@ -167,7 +167,7 @@
                            aria-controls="colListGroup4"
                            aria-expanded="false"
                            data-toggle="collapse">
-                            <span class="fa fa-clock-o fa-2x"></span>
+                            <span class="fa fa-clock-o fa-2x"> </span>
                             Gerenciar Dias e Horarios</a>
                     </h4>
                 </div>
@@ -183,6 +183,36 @@
                             <a href="{{ route('horario.create') }}">Cadastrar Horarios</a></li>
                         <li class="list-group-item">
                             <a href="{{ route('horario') }}">Listar Horarios</a></li>
+
+                    </ul>
+                    <div class="panel-footer">
+
+                    </div>
+                </div>
+            </div>
+            <!--/.menu navegação lateral-->
+
+            <!--inicio menu navegação lateral-->
+
+            <div class="panel panel-primary">
+                <div id="colGroup1" role="tab" class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#colListGroup5"
+                           aria-controls="colListGroup5"
+                           aria-expanded="false"
+                           data-toggle="collapse">
+                            <span class="fa fa-file fa-2x"> </span>
+                            Relatorios</a>
+                    </h4>
+                </div>
+                <div role="tabpanel" class="panel-collapse
+                         collapse" id="colListGroup5"
+                     aria-expanded="false">
+                    <ul class="list-group barra_lateral">
+                        <li class="list-group-item">
+                            <a href="{{ route('report') }}">Relatorio de Professores</a></li>
+
+
 
                     </ul>
                     <div class="panel-footer">

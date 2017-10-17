@@ -101,3 +101,6 @@ Route::group(['prefix'=>'turma_aluno', 'where'=> ['id'=>'[0-9]+']], function () 
     Route::put('{id}/update',   ['as'=>'turma_aluno.update',          'uses'=>'Turma_alunoController@update']);
 });
 
+Route::group(['prefix'=>'report', 'where'=> ['id'=>'[0-9]+']], function () {
+    Route::get('',              ['as' => 'report',               'uses'=>'ReportController@index']);
+   });

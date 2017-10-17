@@ -9,7 +9,7 @@ class Horario extends Model
     protected $fillable = ['horarios'];
 
     public function hora(){
-        return $this -> hasMany('App\Horario');
+        return $this -> hasMany('App\Turma');
 
     }
 }

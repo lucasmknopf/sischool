@@ -16,7 +16,8 @@ class Turma extends Model
         return $this -> belongsTo('App\Horario');
 
     }
-    public function dia(){
+
+    public function diaSemana(){
         return $this -> belongsTo('App\Dia');
 
     }

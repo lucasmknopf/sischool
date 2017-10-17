@@ -33,7 +33,7 @@
                     <td>{{$prof->cpf}}</td>
                     <td>{{$prof->telefone}}</td>
                     <td>{{$prof->endereco}}</td>
-                    <td>{{$prof->data_nasc}}</td>
+                    <td>{{ date( 'd/m/Y' , strtotime($prof->data_nasc))}}</td>
                     <td>{{$prof->email}}</td>
 
                     <td>

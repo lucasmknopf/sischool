@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rel_clientes_cadastrados" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3b3e8a37-3141-4095-92b6-01b87db9d854">
+	<property name="ireport.zoom" value="1.6105100000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from professors]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rg" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_nasc" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="52848bad-57e0-4b5c-98c6-0ca82bf083d0"/>
+				<staticText>
+					<reportElement x="176" y="20" width="316" height="43" forecolor="#FFFFFF" uuid="6da093ac-4523-48be-b93a-0dfd6c610221"/>
+					<textElement textAlignment="Center">
+						<font size="24" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Lista de Professores]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="176" y="63" width="316" height="20" forecolor="#FFFFFF" uuid="efe2c9d8-847c-443c-8f07-a82d953bbf65"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Sischool - Centro Cultural]]></text>
+				</staticText>
+				<image>
+					<reportElement x="65" y="11" width="146" height="72" uuid="9dd1d1eb-376a-4389-a465-50f0c6400a3c"/>
+					<imageExpression><![CDATA["C:\\Users\\Baraoinfo\\Desktop\\sischool\\public\\reports\\brasao.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="f8ffbe30-e808-4bb3-bc03-8b52f2132913"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="0" width="113" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="505a5877-8785-4c0c-bfe2-d7f8a0368aa4"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="93" y="0" width="183" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8a10e95c-82b6-49fc-bc5b-bb5a816db07b"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="240" y="0" width="174" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="20175003-343a-4d4c-874b-54e3765819b2"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="414" y="0" width="161" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6f2be7c6-35db-4c02-8438-86b4b22f3975"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-mail]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="f95d860b-9fbe-495c-8516-793460cb1e0f"/>
+			</line>
+			<textField>
+				<reportElement x="293" y="0" width="100" height="20" uuid="50ffaade-0bdc-4d5a-ae7f-4ba75ef051e9"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="16" y="0" width="100" height="20" uuid="e0cb9eb1-d9b6-462d-90a1-034a6ff8e232"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="0" width="100" height="20" uuid="de108c61-5554-4ef3-8803-fc288164fc82"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="411" y="0" width="143" height="20" uuid="5c327878-9436-4668-bcf2-2345a6c0e7fc"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<rectangle>
+				<reportElement x="-20" y="0" width="598" height="17" forecolor="#E6E6E6" backcolor="#E6E6E6" uuid="96628331-7df9-4e35-961c-f4b40b8a9457"/>
+			</rectangle>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="414" y="0" width="140" height="17" uuid="62656a7a-dfac-4ea2-8eb0-ca54fb8bdb22"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="80" height="17" uuid="de468083-0bda-47ba-875b-205bd06a3b34"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="80" y="0" width="40" height="17" uuid="8d27a39b-5de8-4ad5-91d9-a4b824281bff"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

@@ -33,7 +33,7 @@
                     <td>{{$coord->cpf}}</td>
                     <td>{{$coord->telefone}}</td>
                     <td>{{$coord->endereco}}</td>
-                    <td>{{$coord->data_nasc}}</td>
+                    <td>{{ date( 'd/m/Y' , strtotime($coord->data_nasc))}}</td>
                     <td>{{$coord->email}}</td>
 
                     <td>

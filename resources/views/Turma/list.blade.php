@@ -29,7 +29,7 @@
                 <tr>
                     <td>{{$tur->descricao}}</td>
                     <td>{{$tur->vagas}}</td>
-                    <td>{{$tur->data_limite}}</td>
+                    <td>{{ date( 'd/m/Y' , strtotime($tur->data_limite))}}</td>
                     <td>{{$tur->oficina->nome_oficina}}</td>
                     <td>{{$tur->horario->horarios}}</td>
                     <td>{{$tur->dia_id}}</td>

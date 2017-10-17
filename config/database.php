@@ -52,6 +52,7 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            'jdbc_dir' => env('JDBC_DIR', '/vendor/lavela/phpjasper/src/JasperStarter/jdbc'),
         ],
 
         'pgsql' => [
