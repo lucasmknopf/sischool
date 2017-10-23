@@ -10,7 +10,6 @@ Route::get('/', function () {
     return view('app');
 });
 
-
 Route::group(['prefix'=>'aluno', 'where'=> ['id'=>'[0-9]+']], function () {
     Route::get('',              ['as' => 'aluno',               'uses'=>'AlunoController@index']);
     Route::get('create',        ['as'=>'aluno.create',          'uses'=>'AlunoController@create']);
@@ -29,14 +28,14 @@ Route::group(['prefix'=>'auxiliar', 'where'=> ['id'=>'[0-9]+']], function () {
     Route::put('{id}/update',   ['as'=>'auxiliar.update',          'uses'=>'AuxiliarController@update']);
 });
 
-Route::group(['prefix'=>'coordenador', 'where'=> ['id'=>'[0-9]+']], function () {
-    Route::get('',              ['as' => 'coordenador',               'uses'=>'CoordenadorController@index']);
-    Route::get('create',        ['as'=>'coordenador.create',          'uses'=>'CoordenadorController@create']);
-    Route::post('store',        ['as'=>'coordenador.store',           'uses'=>'CoordenadorController@store']);
-    Route::get('{id}/destroy',  ['as'=>'coordenador.destroy',         'uses'=>'CoordenadorController@destroy']);
-    Route::get('{id}/edit',     ['as'=>'coordenador.edit',            'uses'=>'CoordenadorController@edit']);
-    Route::put('{id}/update',   ['as'=>'coordenador.update',          'uses'=>'CoordenadorController@update']);
+Route::group(['middleware'=>'admin'], function () {
+    Route::get('/coordenador',  'CoordenadorController@index');
+    Route::get('/coordenador/login',  'CoordenadorController@login');
+    Route::post('/coordenador/login',  'CoordenadorController@postlogin');
+    Route::get('/coordenador/logout',  'CoordenadorController@logout');
 });
+
+
 
 Route::group(['prefix'=>'dia', 'where'=> ['id'=>'[0-9]+']], function () {
     Route::get('',              ['as' => 'dia',               'uses'=>'DiaController@index']);
