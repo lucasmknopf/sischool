@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Auth;
 
 class CoordenadorController extends Controller
 {
-    public function listcoo(){
+
+    public function listar(){
         $coordenadors = Coordenador::all();
         return view('coordenador.list', ['coordenadors'=> $coordenadors]);
 
@@ -49,7 +50,7 @@ class CoordenadorController extends Controller
         $credentials=['email'=>$request->get('email'),'password'=>$request->get('password')];
 
         if (auth()->guard('admin')->attempt($credentials)){
-            return redirect('/coordenador');
+            return view('app');
         }else{
             return redirect('/coordenador/login')
                 ->withErrors(['errors'=>'Login Inválido!'])
@@ -63,7 +64,7 @@ class CoordenadorController extends Controller
         return redirect('/coordenador/login');
         }
 
-/*
+
     public function create(){
         return view ('coordenador.create');
 
@@ -95,5 +96,5 @@ class CoordenadorController extends Controller
         return redirect()->route('coordenador');
 
     }
-*/
+
 }

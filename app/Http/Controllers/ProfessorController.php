@@ -8,7 +8,52 @@ use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
 {
+    public function construct(){
+
+        //$this->middleware('auth');
+    }
+
     public function index(){
+        return view('professor.index');
+    }
+
+    public function login(){
+
+        return view('login-prof');
+
+    }
+
+    public function postlogin(Request $request){
+
+        $validator = validator($request->all(),[
+            'email'=>'required|min:3|max:100',
+            'password'=>'required|min:3|max:100',
+
+        ]);
+
+        if ($validator->fails()){
+            return redirect('/professor/login')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $credentials=['email'=>$request->get('email'),'password'=>$request->get('password')];
+
+        if (auth()->guard('prof')->attempt($credentials)){
+            return redirect('/professor');
+        }else{
+            return redirect('/professor/login')
+                ->withErrors(['errors'=>'Login Inválido!'])
+                ->withInput();
+        }
+    }
+
+    public function logout(){
+
+        auth()->guard('prof')->logout();
+        return redirect('/professor/login');
+    }
+
+  public function listar(){
         $professors = Professor::all();
         return view('professor.list', ['professors'=> $professors]);
 

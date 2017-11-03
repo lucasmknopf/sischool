@@ -1,0 +1,1 @@
+{{auth()->guard('prof')->user()->nome}}

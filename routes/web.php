@@ -7,8 +7,53 @@
 });*/
 
 Route::get('/', function () {
-    return view('app');
+    return view('logins');
 });
+
+
+
+
+Route::get('/auxi', function () {
+    return view('login-auxi');
+});
+
+
+
+Route::group(['middleware'=>'admin'], function () {
+
+    Route::group(['middleware'=>'auth:admin'], function (){
+        Route::get('/coordenador',  'CoordenadorController@index');
+        Route::get('/coordenador/logout',  'CoordenadorController@logout');
+
+    });
+    Route::get('/coordenador/login',  'CoordenadorController@login');
+    Route::post('/coordenador/login',  'CoordenadorController@postlogin');
+});
+
+Route::group(['middleware'=>'auxi'], function () {
+
+    Route::group(['middleware'=>'auth:auxi'], function (){
+        Route::get('/auxiliar',  'AuxiliarController@index');
+        Route::get('/auxiliar/logout',  'AuxiliarController@logout');
+    });
+
+    Route::get('/auxiliar/login',  'AuxiliarController@login');
+    Route::post('/auxiliar/login',  'AuxiliarController@postlogin');
+
+});
+
+Route::group(['middleware'=>'prof'], function () {
+
+    Route::group(['middleware'=>'auth:prof'], function (){
+        Route::get('/professor',  'ProfessorController@index');
+    });
+
+    Route::get('/professor/login',  'ProfessorController@login');
+    Route::post('/professor/login',  'ProfessorController@postlogin');
+    Route::get('/professor/logout',  'ProfessorController@logout');
+});
+
+
 
 Route::group(['prefix'=>'aluno', 'where'=> ['id'=>'[0-9]+']], function () {
     Route::get('',              ['as' => 'aluno',               'uses'=>'AlunoController@index']);
@@ -20,7 +65,7 @@ Route::group(['prefix'=>'aluno', 'where'=> ['id'=>'[0-9]+']], function () {
 });
 
 Route::group(['prefix'=>'auxiliar', 'where'=> ['id'=>'[0-9]+']], function () {
-    Route::get('',              ['as' => 'auxiliar',               'uses'=>'AuxiliarController@index']);
+    Route::get('',              ['as' => 'auxiliar',               'uses'=>'AuxiliarController@listar']);
     Route::get('create',        ['as'=>'auxiliar.create',          'uses'=>'AuxiliarController@create']);
     Route::post('store',        ['as'=>'auxiliar.store',           'uses'=>'AuxiliarController@store']);
     Route::get('{id}/destroy',  ['as'=>'auxiliar.destroy',         'uses'=>'AuxiliarController@destroy']);
@@ -28,14 +73,14 @@ Route::group(['prefix'=>'auxiliar', 'where'=> ['id'=>'[0-9]+']], function () {
     Route::put('{id}/update',   ['as'=>'auxiliar.update',          'uses'=>'AuxiliarController@update']);
 });
 
-Route::group(['middleware'=>'admin'], function () {
-    Route::get('/coordenador',  'CoordenadorController@index');
-    Route::get('/coordenador/login',  'CoordenadorController@login');
-    Route::post('/coordenador/login',  'CoordenadorController@postlogin');
-    Route::get('/coordenador/logout',  'CoordenadorController@logout');
+Route::group(['prefix'=>'coordenador', 'where'=> ['id'=>'[0-9]+']], function () {
+    Route::get('',              ['as' => 'coordenador',               'uses'=>'CoordenadorController@listar']);
+    Route::get('create',        ['as'=>'coordenador.create',          'uses'=>'CoordenadorController@create']);
+    Route::post('store',        ['as'=>'coordenador.store',           'uses'=>'CoordenadorController@store']);
+    Route::get('{id}/destroy',  ['as'=>'coordenador.destroy',         'uses'=>'CoordenadorController@destroy']);
+    Route::get('{id}/edit',     ['as'=>'coordenador.edit',            'uses'=>'CoordenadorController@edit']);
+    Route::put('{id}/update',   ['as'=>'coordenador.update',          'uses'=>'CoordenadorController@update']);
 });
-
-
 
 Route::group(['prefix'=>'dia', 'where'=> ['id'=>'[0-9]+']], function () {
     Route::get('',              ['as' => 'dia',               'uses'=>'DiaController@index']);
@@ -74,7 +119,7 @@ Route::group(['prefix'=>'oficina', 'where'=> ['id'=>'[0-9]+']], function () {
 });
 
 Route::group(['prefix'=>'professor', 'where'=> ['id'=>'[0-9]+']], function () {
-    Route::get('',              ['as' => 'professor',               'uses'=>'ProfessorController@index']);
+    Route::get('',              ['as' => 'professor',               'uses'=>'ProfessorController@listar']);
     Route::get('create',        ['as'=>'professor.create',          'uses'=>'ProfessorController@create']);
     Route::post('store',        ['as'=>'professor.store',           'uses'=>'ProfessorController@store']);
     Route::get('{id}/destroy',  ['as'=>'professor.destroy',         'uses'=>'ProfessorController@destroy']);

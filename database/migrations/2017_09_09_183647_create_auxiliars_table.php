@@ -22,6 +22,8 @@ class CreateAuxiliarsTable extends Migration
             $table->string('endereco',50);
             $table->date('data_nasc');
             $table->string('cpf',11);
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

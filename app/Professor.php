@@ -2,11 +2,15 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Professor extends Model
+class Professor extends Authenticatable
 {
-    protected $fillable = ['nome','rg','cpf','endereco','telefone','data_nasc','email'];
+    protected $fillable = ['nome','rg','cpf','endereco','telefone','data_nasc','email', 'password'];
+
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 
     public function profe(){
         return $this -> hasMany('App\Professor');

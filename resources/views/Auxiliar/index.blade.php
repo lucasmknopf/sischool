@@ -1,0 +1,1 @@
+{{auth()->guard('auxi')->user()->nome}}
