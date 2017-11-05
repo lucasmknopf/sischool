@@ -7,17 +7,8 @@
 });*/
 
 Route::get('/', function () {
-    return view('logins');
+    return view('login');
 });
-
-
-
-
-Route::get('/auxi', function () {
-    return view('login-auxi');
-});
-
-
 
 Route::group(['middleware'=>'admin'], function () {
 

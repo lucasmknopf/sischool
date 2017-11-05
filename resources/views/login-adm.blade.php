@@ -23,6 +23,12 @@
 
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top logins">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">SISCHOOL - Bem Vindo Coordenador</a>
+    </div>
+</nav>
+
 <div class="container">
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
@@ -78,7 +84,10 @@
             <button type="submit" class="btn btn-primary">
                 <i class="fa fa-btn fa-sign-in"></i> Login
             </button>
-    </div>
+
+            <a class="btn btn-danger" href="/"><i class="fa fa-sign-out"></i>Voltar</a>
+
+        </div>
     </div>
 </form>
 </div>

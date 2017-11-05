@@ -1,6 +1,8 @@
 @extends('app')
 
     @section('content')
+        <link type="text/css" href="DataTables-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+        <!-- Fonts -->
             <div class="container">
                 <div class="row">
                     <div class="col-sm-9">
@@ -10,7 +12,7 @@
                         </div>
                             <div class="box-body">
                                 <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover">
+        <table class="table table-striped table-bordered table-hover" id="horario">
             <thead>
                 <tr bgcolor="#1e90ff">
                     <th>Horario</th>
@@ -37,4 +39,10 @@
                     </div>
                 </div>
             </div>
+            <script src="DataTables-1.10.16/js/jquery.dataTables.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('#horario').DataTable();
+                } );
+            </script>
     @endsection
