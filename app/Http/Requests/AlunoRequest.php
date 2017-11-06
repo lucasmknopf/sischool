@@ -27,7 +27,7 @@ class AlunoRequest extends FormRequest
             'nome'=>'required|min:5|max:100',
             'certidao_nasc'=>'required|max:20',
             'endereco'=>'required',
-            'telefone'=>'required|numeric',
+            'telefone'=>'required',
             'data_nasc'=>'required|date',
             'turno'=>'required',
 

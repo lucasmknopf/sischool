@@ -1,6 +1,8 @@
 @extends('app')
 
 @section('content')
+
+
     <div class="container">
         <div class="col-sm-9">
         <h1>Novo Aluno</h1>
@@ -32,7 +34,7 @@
 
         <div class="form-group">
             {!! Form::label('telefone', 'Telefone') !!}
-            {!! Form::text('telefone', null,['class' =>'form-control']) !!}
+            {!! Form::text('telefone', null,['class' =>'form-control','','placeholder'=>'(__)____-_____']) !!}
         </div>
 
         <div class="form-group">
@@ -63,4 +65,14 @@
 
     </div>
     </div>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
+
+    <script>
+    $(document).ready(function(){
+    $('#telefone').mask('(00)0000-0000');
+        $('.date').unmask();
+    });</script>
+
 @endsection

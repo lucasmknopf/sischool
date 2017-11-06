@@ -52,6 +52,12 @@
 
 
             <div class="form-group">
+                {!! Form::label('password', 'Senha ') !!}
+                {!! Form::password('password', null,['class' =>'form-control']) !!}
+            </div>
+
+
+            <div class="form-group">
                 {!! Form::submit ('Cadastrar Professor', ['class'=>'btn btn-primary btn-lg' ]) !!}
 
             </div>
