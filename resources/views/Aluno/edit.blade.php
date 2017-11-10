@@ -51,6 +51,7 @@
                 {!! Form::select('oficina_id', \App\Oficina::orderBy('nome_oficina')->pluck('nome_oficina','id')->toArray(), $aluno->oficina_id,['class' =>'form-control']) !!}
             </div>
 
+
             <div class="form-group">
                 {!! Form::submit ('Editar Aluno', ['class'=>'btn btn-primary btn-lg' ]) !!}
 
@@ -63,4 +64,14 @@
 
     </div>
     </div>
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#telefone').mask('(00)0000-0000');
+            $('.date').unmask();
+        });</script>
 @endsection

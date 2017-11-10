@@ -17,7 +17,7 @@
 
         <div class="form-group">
             {!! Form::label('horario', 'Horario') !!}
-            {!! Form::text('horario', null,['class' =>'form-control']) !!}
+            {!! Form::text('horario', null,['class' =>'form-control','','placeholder'=>'00:00']) !!}
         </div>
 
 
@@ -34,4 +34,16 @@
 
     </div>
     </div>
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#horario').mask('00:00');
+            $('.date').unmask();
+        });
+
+    </script>
 @endsection
