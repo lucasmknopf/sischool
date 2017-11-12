@@ -40,23 +40,33 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'coorde',
-        ],
-        'auxi' => [
-            'driver' => 'session',
-            'provider' => 'auxil',
-        ],
-        'prof' => [
-            'driver' => 'session',
-            'provider' => 'profe',
-        ],
-
-
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'coords',
+        ],
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'coords',
+        ],
+        'auxi' => [
+            'driver' => 'session',
+            'provider' => 'auxis',
+        ],
+        'auxi-api' => [
+            'driver' => 'token',
+            'provider' => 'auxis',
+        ],
+        'prof' => [
+            'driver' => 'session',
+            'provider' => 'profs',
+        ],
+        'prof-api' => [
+            'driver' => 'token',
+            'provider' => 'profs',
         ],
     ],
 
@@ -84,17 +94,17 @@ return [
         ],
 
 
-        'coorde' => [
+        'coords' => [
             'driver' => 'eloquent',
             'model' => App\Coordenador::class,
         ],
 
-        'auxil' => [
+        'auxis' => [
             'driver' => 'eloquent',
             'model' => App\Auxiliar::class,
         ],
 
-        'profe' => [
+        'profs' => [
             'driver' => 'eloquent',
             'model' => App\Professor::class,
         ],

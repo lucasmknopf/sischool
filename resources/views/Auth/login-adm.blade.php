@@ -36,7 +36,7 @@
 <div class="panel-heading">Login Coordenador</div>
 <div class="panel-body">
 
-<form class="form-horizontal" role="form" method="POST" action="{{url('/coordenador/login')}}">
+<form class="form-horizontal" role="form" method="POST" action="{{route('admin.login.submit')}}">
 {!! csrf_field() !!}
 
     <div class="form-group{{$errors->has('email')?'has-error':''}}">

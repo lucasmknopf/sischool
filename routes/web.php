@@ -9,7 +9,7 @@
 Route::get('/', function () {
     return view('login');
 });
-
+/*
 Route::group(['middleware'=>'admin'], function () {
 
     Route::group(['middleware'=>'auth:admin'], function (){
@@ -43,8 +43,12 @@ Route::group(['middleware'=>'prof'], function () {
     Route::post('/professor/login',  'ProfessorController@postlogin');
     Route::get('/professor/logout',  'ProfessorController@logout');
 });
-
-
+*/
+Route::prefix('admin')->group(function (){
+    Route::get('/login', 'Auth\CoordLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\CoordLoginController@login')->name('admin.login.submit');
+    Route::get('/', 'CoordenadorController@index')->name('admin.dashboard');
+});
 
 Route::group(['prefix'=>'aluno', 'where'=> ['id'=>'[0-9]+']], function () {
     Route::get('',              ['as' => 'aluno',               'uses'=>'AlunoController@index']);
@@ -81,7 +85,7 @@ Route::group(['prefix'=>'dia', 'where'=> ['id'=>'[0-9]+']], function () {
     Route::get('{id}/edit',     ['as'=>'dia.edit',            'uses'=>'DiaController@edit']);
     Route::put('{id}/update',   ['as'=>'dia.update',          'uses'=>'DiaController@update']);
 });
-
+/*
 Route::group(['prefix'=>'frequencia_conteudo', 'where'=> ['id'=>'[0-9]+']], function () {
     Route::get('',              ['as' => 'frequencia_conteudo',               'uses'=>'Frequencia_conteudoController@index']);
     Route::get('create',        ['as'=>'frequencia_conteudo.create',          'uses'=>'Frequencia_conteudoController@create']);
@@ -89,7 +93,7 @@ Route::group(['prefix'=>'frequencia_conteudo', 'where'=> ['id'=>'[0-9]+']], func
     Route::get('{id}/destroy',  ['as'=>'frequencia_conteudo.destroy',         'uses'=>'Frequencia_conteudoController@destroy']);
     Route::get('{id}/edit',     ['as'=>'frequencia_conteudo.edit',            'uses'=>'Frequencia_conteudoController@edit']);
     Route::put('{id}/update',   ['as'=>'frequencia_conteudo.update',          'uses'=>'Frequencia_conteudoController@update']);
-});
+});*/
 
 Route::group(['prefix'=>'horario', 'where'=> ['id'=>'[0-9]+']], function () {
     Route::get('',              ['as' => 'horario',               'uses'=>'HorarioController@index']);
@@ -139,3 +143,7 @@ Route::group(['prefix'=>'turma_aluno', 'where'=> ['id'=>'[0-9]+']], function () 
 Route::group(['prefix'=>'report', 'where'=> ['id'=>'[0-9]+']], function () {
     Route::get('',              ['as' => 'report',               'uses'=>'ReportController@index']);
    });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
